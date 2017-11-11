@@ -11,6 +11,9 @@ RUN apt install -y build-essential git-core ca-certificates libltdl-dev \
     python python-pip python-dev python3 python3-pip python3-dev \
     gcc-multilib pkg-config libffi-dev qemu-system gcc-mingw-w64 \
     autoconf autotools-dev automake autogen libtool m4 realpath gettext
+    
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python2.7 10
+
 RUN pip install -U pip setuptools wheel && \
     pip3 install -U pip setuptools wheel && \
     pip3 install cpp-coveralls
@@ -26,7 +29,7 @@ RUN pip install -U pyserial prettytable mbed-cli colorama PySerial \
     PrettyTable Jinja2 IntelHex junit-xml pyYAML requests mbed-ls \
     mbed-host-tests mbed-greentea beautifulsoup4 fuzzywuzzy
 
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python2.7 10
+
 # Set mbed GCC_ARM toolchain path
 RUN mbed config --global GCC_ARM_PATH "$(dirname $(which arm-none-eabi-gcc))"
 RUN mbed config --list
