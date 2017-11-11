@@ -26,9 +26,10 @@ RUN pip install -U pyserial prettytable mbed-cli colorama PySerial \
     PrettyTable Jinja2 IntelHex junit-xml pyYAML requests mbed-ls \
     mbed-host-tests mbed-greentea beautifulsoup4 fuzzywuzzy
 
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python2.7 10
 # Set mbed GCC_ARM toolchain path
-RUN mbed config --global GCC_ARM_PATH "$(dirname $(which arm-none-eabi-gcc))" ;\
-    mbed config --list
+RUN mbed config --global GCC_ARM_PATH "$(dirname $(which arm-none-eabi-gcc))"
+RUN mbed config --list
 
 # Clean up cache
 RUN rm -rf /var/cache/apk/*
