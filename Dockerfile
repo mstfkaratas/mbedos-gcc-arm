@@ -8,15 +8,15 @@ RUN echo "deb http://ppa.launchpad.net/team-gcc-arm-embedded/ppa/ubuntu xenial m
 
 # Install toolchain and associated requirements
 RUN apt install -y build-essential git-core ca-certificates libltdl-dev \
-    python python-pip python-dev python3 python3-pip python3-dev \
+    python python-pip python-dev \
     gcc-multilib pkg-config libffi-dev qemu-system gcc-mingw-w64 \
     autoconf autotools-dev automake autogen libtool m4 realpath gettext
     
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python2.7 10
 
-RUN pip install -U pip setuptools wheel && \
-    pip3 install -U pip setuptools wheel && \
-    pip3 install cpp-coveralls
+RUN pip install -U pip setuptools wheel
+
+
 
 RUN apt install -y gcc-arm-embedded
 
