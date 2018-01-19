@@ -16,8 +16,6 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python2.7 10
 
 RUN pip install -U pip setuptools wheel
 
-
-
 RUN apt install -y gcc-arm-embedded
 
 # Print out installed version
