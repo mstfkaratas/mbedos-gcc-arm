@@ -13,7 +13,7 @@ RUN echo "deb http://ppa.launchpad.net/team-gcc-arm-embedded/ppa/ubuntu bionic m
 RUN apt install -y build-essential git-core ca-certificates libltdl-dev \
     python python-pip python-dev \
     gcc-multilib pkg-config libffi-dev qemu-system gcc-mingw-w64 \
-    autoconf autotools-dev automake autogen libtool m4 realpath gettext
+    autoconf autotools-dev automake autogen libtool m4 coreutils gettext
     
 #RUN update-alternatives --install /usr/bin/python python /usr/bin/python2.7 10
 
