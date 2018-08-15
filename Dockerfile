@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 
 # Add the official ARM PPA and extra official repos to the apt sources
 RUN echo "deb http://ppa.launchpad.net/team-gcc-arm-embedded/ppa/ubuntu xenial main" >> /etc/apt/sources.list && \
@@ -12,7 +12,7 @@ RUN apt install -y build-essential git-core ca-certificates libltdl-dev \
     gcc-multilib pkg-config libffi-dev qemu-system gcc-mingw-w64 \
     autoconf autotools-dev automake autogen libtool m4 realpath gettext
     
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python2.7 10
+#RUN update-alternatives --install /usr/bin/python python /usr/bin/python2.7 10
 
 RUN pip install -U pip setuptools wheel
 
