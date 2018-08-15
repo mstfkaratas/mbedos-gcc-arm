@@ -1,5 +1,7 @@
 FROM ubuntu:bionic
 
+RUN apt-get install -y gnupg
+
 # Add the official ARM PPA and extra official repos to the apt sources
 RUN echo "deb http://ppa.launchpad.net/team-gcc-arm-embedded/ppa/ubuntu bionic main" >> /etc/apt/sources.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F64D33B0 && \
